@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: security-deployment
+  labels:
+    app: springsecurity
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: springsecurity
+  template:
+    metadata:
+      labels:
+        app: springsecurity
+    spec:
+      containers:
+      - name: springsecurity
+        image: falcon007/springsecurity:0.0.1
+        ports:
+        - containerPort: 8080
