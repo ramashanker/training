@@ -1,13 +1,18 @@
 package com.rama.spring.app.controller;
 
 import java.security.Principal;
+import java.util.List;
 
 import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.rama.spring.app.dto.Employee;
 
 @RestController
 public class GreetController {
@@ -34,7 +39,24 @@ public class GreetController {
         return principal.getName();
     }
 	
-	
+	@RequestMapping(value = "/createData", method = RequestMethod.POST)
+    @ResponseBody
+    public Employee createEmployee(@RequestBody Employee employee) {
+		final String uri = "http://localhost:8083/mongo/create"; 
+	    RestTemplate restTemplate = new RestTemplate();
+	    Employee result = restTemplate.postForObject( uri, employee, Employee.class);
+	    System.out.println(result);
+	    return result;
+    }
+	@RequestMapping(value = "/readData", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Employee> getEmployee(@RequestBody Employee employee) {
+		final String uri = "http://localhost:8083/mongo/read"; 
+	    RestTemplate restTemplate = new RestTemplate();
+	    List<Employee> result = restTemplate.getForObject(uri, List.class);
+	    System.out.println(result.size());
+	    return result;
+    }
 	
 }
 
