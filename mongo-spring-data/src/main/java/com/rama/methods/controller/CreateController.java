@@ -30,10 +30,9 @@ public class CreateController {
 
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
 	public void modifyByID(Customer customer,@RequestParam String custId, @RequestParam String name) {
-		customer = customerRepo.findBycustId(custId);
-		customer.setName(name);
+		customer = customerRepo.findByName(name);
+		customer.setCustId(custId);
 		customerRepo.save(customer);
-
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)

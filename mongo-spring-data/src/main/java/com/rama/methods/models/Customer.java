@@ -1,7 +1,6 @@
 package com.rama.methods.models;
 
 public class Customer {
-	
 	String name;
 	String custId;
 	String address;
