@@ -23,7 +23,7 @@ public class Student {
 	}
 	
 	public String getStd() {
-		return rollno;
+		return std;
 	}
 
 	public void setStd(String std) {
