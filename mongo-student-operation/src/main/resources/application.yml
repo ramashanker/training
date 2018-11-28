@@ -1,0 +1,9 @@
+--- 
+server: 
+  port: 8083
+spring:
+   data:
+      mongodb.host: localhost
+      mongodb.port: 27017
+      mongodb.uri: mongodb://localhost/data
+      mongo.repositories.enabled: true
