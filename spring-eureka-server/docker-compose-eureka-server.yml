@@ -1,0 +1,31 @@
+version: '2.1'
+services:
+  eureka-server:
+    image: falcon007/spring-eureka-server:1.0.0
+    ports:
+      - "8761:8761"
+   
+  student-service:
+    image: falcon007/spring-eureka-student-client:1.0.0
+    ports:
+      - "8098:8098"
+    environment:
+      SPRING_APPLICATION_NAME: student-service
+      EUREKA_INSTANCE_PREFER_IP_ADDRESS: "true"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+    links:
+      - "eureka-server"
+      
+  school-service:
+    image: falcon007/spring-eureka-school-client:1.0.0
+    ports:
+      - "9098:9098"
+    environment:
+      SPRING_APPLICATION_NAME: school-service
+      EUREKA_INSTANCE_PREFER_IP_ADDRESS: "true"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+    links:
+      - "eureka-server"
+volumes:
+  installation:
+     external: false
