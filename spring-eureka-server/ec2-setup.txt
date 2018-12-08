@@ -1,0 +1,36 @@
+https://github.com/ramashanker/trainin.
+0)EC2 instance creation
+https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Instances:sort=instanceId
+ec2-user@18.188.125.211
+
+----------------------------------------------------------------------------
+1)Docker install
+sudo yum update -y
+sudo amazon-linux-extras install docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+configure to user:
+https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
+
+----------------------------------------------------------------------------
+2)maven install
+https://gist.github.com/sebsto/19b99f1fa1f32cae5d00
+
+sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+sudo yum install -y apache-maven
+mvn --version
+---------------------------------------------------------------------------------
+3)Java upgrade
+sudo yum install java-1.8.0-openjdk-devel
+sudo /usr/sbin/alternatives --config java
+sudo /usr/sbin/alternatives --config javac
+sudo yum remove java-1.7.0-openjdk
+https://serverfault.com/questions/664643/how-can-i-upgrade-to-java-1-8-on-an-amazon-linux-server
+---------------------------------------------------------------------------------------------------------
+4)docker compose install
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-centos-7
