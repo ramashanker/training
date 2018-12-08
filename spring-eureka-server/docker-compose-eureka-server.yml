@@ -26,6 +26,12 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
     links:
       - "eureka-server"
+      - "mongo-service"
+      
+  mongo-service:
+    image: mongo:3.4.7
+    ports:
+      - "27017:27017"
 volumes:
   installation:
      external: false
