@@ -1,19 +1,5 @@
 version: '3'
 services:
-  cassendra:
-    image: cassandra:3.10
-    environment:
-      CASSANDRA_BROADCAST_ADDRESS: "0:0:0:0:0:0:0:1"
-    networks:
-      - app-legacy
-    ports:
-      - "7199:7199"
-      - "9042:9042"
-      - "7000:7001"
-      - "9160:9160"
-    volumes:
-      - /db/data/cassandra:/var/lib/cassandra
-
   landoop:
     image: landoop/fast-data-dev:latest
     environment:
