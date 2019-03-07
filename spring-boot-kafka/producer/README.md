@@ -1,5 +1,5 @@
 # Project
-This Apllication is use understand the basic security mechanism in sprict boot application.
+This Apllication is use understand the basic kafka message producer in sprict boot application.
 
 ## Import project
 Import the project on either eclipse or inellij as a maven import project
@@ -71,20 +71,20 @@ image: <your repo name>/mongodboperation:latest
 Command to start:
 
 ```bash
-$ docker-compose -f docker-compose-basic-security.yml pull
-$ docker-compose -f docker-compose-basic-security.yml up
+$ docker-compose -f docker-compose-dependency.yml pull
+$ docker-compose -f docker-compose-dependency.yml up
 ```
 ### Running the application using Kubernetes.
 
 ```
-kubectl create -f security-application.yml
+kubectl create -f kafka-application.yml
 kubectl get pods
 kubectl get deployment
-kubectl describe deployments security-deployment
+kubectl describe deployments kafka-deployment
 docker ps
-kubectl expose deployment security-deployment --type=LoadBalancer --name=rama-service
-kubectl get services rama-service
-kubectl describe services rama-service
+kubectl expose deployment kafka-deployment --type=LoadBalancer --name=my-service
+kubectl get services my-service
+kubectl describe services my-service
 ```
 
 ## Swagger 
@@ -96,5 +96,8 @@ Example
 http://localhost:8083/swagger-ui.html
 
 ## Testing
-
-curl -X POST http://localhost:9093/publish/data?message=hellokafka
+ 1)Publish using default topic test.topic
+ 
+ ```
+	curl -X POST 'http://127.0.0.1:9093/data/publish?message=rama'
+ ```

@@ -23,8 +23,4 @@ public class Producer {
         kafkaTemplate.send(destinationTopic, payload);
     }
 
-    public void sendToTopic(String topic,String payload){
-        logger.info("Message: "+payload+" sent to topic: "+topic);
-        kafkaTemplate.send(destinationTopic, payload);
-    }
 }

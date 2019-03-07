@@ -1,0 +1,37 @@
+version: '3'
+services:
+  cassendra:
+    image: cassandra:3.10
+    environment:
+      CASSANDRA_BROADCAST_ADDRESS: "0:0:0:0:0:0:0:1"
+    networks:
+      - app-legacy
+    ports:
+      - "7199:7199"
+      - "9042:9042"
+      - "7000:7001"
+      - "9160:9160"
+    volumes:
+      - /db/data/cassandra:/var/lib/cassandra
+
+  landoop:
+    image: landoop/fast-data-dev:latest
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: "localhost"
+      KAFKA_ADVERTISED_PORT: "9092"
+    networks:
+      - app-legacy
+    ports:
+      - "2181:2181"
+      - "3030:3030"
+      - "8081-8083:8081-8083"
+      - "9092:9092"
+      - "9581-9585:9581-9585"
+  
+volumes:
+  installation:
+    external: false
+
+networks:
+  app-legacy:
+    driver: bridge
