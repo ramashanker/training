@@ -101,3 +101,30 @@ http://localhost:8083/swagger-ui.html
  ```
 	curl -X POST 'curl -X POST 'http://127.0.0.1:9093/publish/data?message=rama'
  ```
+
+## Command line execution
+
+1) Enter to container
+
+	´´´
+	docker exec -it <container Id> bash
+	Ex : docker exec -it 1d6716fa6b56 bash
+
+	´´´
+2) Look for topics created
+
+	´´´
+	kafka-topics --zookeeper localhost --topic  <TAB><TAB>
+
+	´´´
+3) configure  topic
+    
+    ´´´
+	kafka-topics --config <TAB><TAB>
+
+	´´´
+4) consumer
+
+	kafka-console-consumer -- <TAB><TAB>
+
+
