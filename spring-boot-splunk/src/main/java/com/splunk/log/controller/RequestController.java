@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/log")
 public class RequestController {
 
     private static final Log LOGGER = LogFactory.getLog(RequestController.class);
 
-    @RequestMapping("/")
+    @RequestMapping("/data")
     public String index() {
     	LOGGER.info("Log sent to splunk!!");
         return "Log sent to splunk!!";

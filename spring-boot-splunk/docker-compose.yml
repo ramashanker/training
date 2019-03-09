@@ -1,7 +1,7 @@
-version: '3'
+version: '2'
 services:
   demo-application:
-    image: falcon007/spring-boot-splunk
+    image: falcon007/spring-boot-splunk:latest
     environment:
       - LOGGING_FILE=/logs/demo-application.log
     ports:
