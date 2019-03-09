@@ -1,13 +1,14 @@
 version: '3'
 services:
   demo-application:
-    image: falcon007/spring-boot-sleuth-splunk-demo
+    image: falcon007/spring-boot-splunk
     environment:
       - LOGGING_FILE=/logs/demo-application.log
     ports:
       - "8080:8080"
     volumes:
       - log_volume:/logs
+      
   splunk:
     image: splunk/splunk
     hostname: splunk
@@ -18,6 +19,7 @@ services:
       - SPLUNK_ENABLE_LISTEN=9997
     ports:
       - "8000:8000"
+      
   splunkforwarder:
     image: splunk/universalforwarder:6.5.3-monitor
     hostname: splunkforwarder
