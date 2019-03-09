@@ -14,9 +14,6 @@ services:
       - "9092:9092"
       - "9581-9585:9581-9585"
   
-volumes:
-  installation:
-    external: false
 
 networks:
   app-legacy:

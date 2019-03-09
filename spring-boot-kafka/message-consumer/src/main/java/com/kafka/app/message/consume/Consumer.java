@@ -13,6 +13,6 @@ public class Consumer {
 
     @KafkaListener(topics ="${spring.kafka.topic}")
     public void consume(ConsumerRecord<?, ?> consumerRecord) {
-        logger.info("Receiver on topic1: "+ consumerRecord.value().toString());
+        logger.info("Receiver on topic: "+ consumerRecord.value().toString());
     }
 }
