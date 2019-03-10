@@ -11,7 +11,7 @@ public class RequestController {
 
     private static final Log LOGGER = LogFactory.getLog(RequestController.class);
 
-    @RequestMapping("/data")
+    @RequestMapping("/message")
     public String index() {
     	LOGGER.info("Log sent to splunk!!");
         return "Log sent to splunk!!";
