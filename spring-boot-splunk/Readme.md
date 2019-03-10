@@ -1,7 +1,3 @@
-Sample project to show log forwarding from a [Spring Boot](https://projects.spring.io/spring-boot/) application to [Splunk](https://www.splunk.com/) via a file forwarder.
-
-[Sleuth](https://cloud.spring.io/spring-cloud-sleuth/) is also added to generate IDs for each request
-
 ## Build
 
 Build the application as a [Docker](https://www.docker.com/) image using:
@@ -9,7 +5,23 @@ Build the application as a [Docker](https://www.docker.com/) image using:
 ```bash
 mvn clean install
 ```
+## Dockerization
 
+### Maven
+wouterd
+alexec
+spotify
+fabric8io
+
+Here i am using maven spotify plugin to create the docker image for this application.
+Use the below command to create the docker image.
+For creating please use your repository to create the image which will be easy to push image in your docker hub.
+update in your pom.xml.
+<docker.image.prefix> <your repo name> </docker.image.prefix>
+
+```bash
+$ mvn install dockerfile:build
+```
 ## Run
 
 Run the included docker-compose file with:
@@ -18,31 +30,17 @@ Run the included docker-compose file with:
 docker-compose up
 ```
 
-This will bring up three containers: A demo application, Splunk, and a Spunk Forwarder.
-
-Shares are forwarded to Splunk via a shared volume between the application and forwarder.
-
-It is possible to send logs to Splunk via Docker's logging mechanism, but the goal here was to use the file forwarder to replicate a production setup.
-
-
 ## Generate logs
 
 Application startup will generate some logs.
 
 Calling the demo endpoint will generate some more logs, with Sleuth trace and Span Ids.
 
-```bash
-curl http://localhost:8080?name=test
-```
+## Testing
 
-## View Logs
+http://localhost:8080/log/message
 
-Got to [Splunk login](http://localhost:8000) to view the logs
+## Splunk Query
 
-## Stop
-
-Stop the containers and remove unused volumes with:
-
-```bash
-docker-compose down -v
+host=splunkforwarder| regex  message=(?<field>.*(?=Log.*)) | stats   latest(trace) as trace  latest(class) as class latest(message) as message by thread
 ```
