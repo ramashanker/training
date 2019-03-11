@@ -17,5 +17,6 @@
         <module>message-producer</module>
         <module>message-consumer</module>
 		<module>log-producer</module>
+		<module>kafka-stream</module>
     </modules>
 </project>
