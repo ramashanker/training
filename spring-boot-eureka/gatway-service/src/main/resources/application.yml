@@ -19,4 +19,4 @@ spring:
  
 logging:
   level:
-    com.example.howtodoinjava: DEBUG
+    com.eureka.app: DEBUG

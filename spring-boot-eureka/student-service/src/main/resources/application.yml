@@ -1,5 +1,5 @@
 server:
-  port: 8099    #default port where the service will be started
+  port: 9093    #default port where the service will be started
  
 eureka:         #tells about the Eureka server details and its refresh time
   instance:
@@ -23,4 +23,4 @@ management:
  
 logging:
   level:
-    com.example.howtodoinjava: DEBUG
+    com.eureka.app: DEBUG

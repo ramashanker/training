@@ -1,5 +1,5 @@
 server:
-  port: 9098    #port number
+  port: 9092    #port number
  
 eureka:
   instance:
@@ -19,4 +19,4 @@ spring:
  
 logging:
   level:
-    com.example.howtodoinjava: DEBUG
+    com.eureka.app: DEBUG
