@@ -1,0 +1,27 @@
+server:
+  port: 9095
+spring:
+  application:
+      name: kafka-app
+  kafka:
+    topic: test.topic
+    bootstrap-servers: localhost:9093  
+    ssl:
+         truststore-location: file:/C:/security/truststore.jks
+         truststore-password: fastdata
+         trust-store-type: JKS
+         keystore-location: file:/C:/security/client.jks
+         keystore-password: fastdata
+         key-store-type: JKS
+         key-password: fastdata	
+    properties:
+       request.timeout.ms: 120000
+       connections.max.idle.ms: 10000
+       security:
+          protocol: SSL
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      buffer-memory: 10048576 # 1MB
+      batch-size: 16384
+      retries: 1
