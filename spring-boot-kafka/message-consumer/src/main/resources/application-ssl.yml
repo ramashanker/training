@@ -1,5 +1,5 @@
 server:
-  port: 9094
+  port: 9096
 spring:
   application:
       name: kafka-app
@@ -7,7 +7,7 @@ spring:
     topic: test.topic
     
     consumer:
-      bootstrap-servers: 0.0.0.0:9093
+      bootstrap-servers: localhost:9093
       group-id: kafka-app
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer

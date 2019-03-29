@@ -1,5 +1,5 @@
 server:
-  port: 9094
+  port: 9096
 spring:
   application:
       name: kafka-app
