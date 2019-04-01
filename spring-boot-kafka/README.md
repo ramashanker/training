@@ -99,7 +99,7 @@ http://localhost:8083/swagger-ui.html
  1)Publish using default topic test.topic
  
  ```
-curl -X POST 'http://127.0.0.1:9093/publish/data?message=mydata'
+curl -X POST 'http://127.0.0.1:9095/publish/data?message=mydata'
  ```
 
 ## Command line execution
