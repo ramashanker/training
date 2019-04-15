@@ -4,7 +4,9 @@ spring:
   application:
       name: kafka-app
   kafka:
-    topic: test.topic
+    topic:
+       first: topic1
+       second: topic2
     producer:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer

@@ -14,7 +14,7 @@ public class Producer {
 
     private static final Logger logger = LoggerFactory.getLogger(Producer.class);
 
-    @Value("${spring.kafka.topic}")
+    @Value("${spring.kafka.topic.first}")
     protected String destinationTopic;
 
     @Autowired
