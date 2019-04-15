@@ -4,8 +4,23 @@ spring:
   application:
       name: kafka-app
   kafka:
-    topic: test.topic
+   # listeners: SSL://:9093
+    properties:
+       security:
+          protocol: SSL
+    ssl:
+         truststore-location: file:/C:/security/truststore.jks
+         truststore-password: fastdata
+         keystore-location: file:/C:/security/client.jks
+         keystore-password: fastdata
+         key-password: fastdata	
+    topic: test.topic2
+  #  broker-list: localhost:9093
+    bootstrap-servers: localhost:9093  
     producer:
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+     key-serializer: org.apache.kafka.common.serialization.StringSerializer
+     value-serializer: org.apache.kafka.common.serialization.StringSerializer
+     
+     
+     
+       

@@ -1,5 +1,7 @@
 package com.kafka.app.message.produce;
 
+import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,9 @@ public class Producer {
 
     public void send(String payload){
         logger.info("Message: "+payload+" sent to topic: "+destinationTopic);
+        Date date = new Date();
+        long timeMilli = date.getTime();
+        System.out.println("Time in milliseconds using Date class: " + timeMilli);
         kafkaTemplate.send(destinationTopic, payload);
     }
 

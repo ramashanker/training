@@ -1,0 +1,13 @@
+server:
+  port: 9096
+spring:
+  application:
+      name: kafka-app
+  kafka:
+    topic: test.topic
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: kafka-app
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
