@@ -51,6 +51,7 @@ b)Import trustkey and client key
    root@fast-data-dev / $ wget localhost:3030/certs/client.jks
 
   c) Start producer
+  
 kafka-console-producer --broker-list localhost:9093 --topic test.topic \
 --producer-property bootstrap.servers=localhost:9093 \
 --producer-property security.protocol=SSL \

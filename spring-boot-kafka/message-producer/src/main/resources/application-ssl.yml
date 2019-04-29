@@ -4,21 +4,21 @@ spring:
   application:
       name: kafka-app
   kafka:
-    properties:
-       security:
-          protocol: SSL
-    ssl:
+    topic:
+     first: test.topic1
+     second: test.topic2
+    producer:
+      bootstrap-servers: localhost:9093
+      group-id: kafka-app
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      ssl:
          truststore-location: file:/C:/security/truststore.jks
          truststore-password: fastdata
          keystore-location: file:/C:/security/client.jks
          keystore-password: fastdata
-         key-password: fastdata	
-    topic: test.topic2
-    bootstrap-servers: localhost:9093  
-    producer:
-     key-serializer: org.apache.kafka.common.serialization.StringSerializer
-     value-serializer: org.apache.kafka.common.serialization.StringSerializer
-     
-     
-     
-       
+         key-password: fastdata
+    properties:
+       security:
+          protocol: SSL
