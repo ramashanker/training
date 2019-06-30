@@ -25,7 +25,7 @@ public class GreetController {
 	@RequestMapping(value = "/greetname", method = RequestMethod.GET)
 	@ResponseBody
 	public String userName(@RequestParam String name /*@PathParam("name") String name*/) {
-		return "Hello"+name;
+		return "Hello "+name;
 	}
 	
 	@RequestMapping(value = "/user-name", method = RequestMethod.GET)
