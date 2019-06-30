@@ -1,0 +1,13 @@
+server:
+  port: 9095
+spring:
+  application:
+      name: kafka-app
+  kafka:
+    topic:
+       first: topic1
+       second: topic2
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer

@@ -1,0 +1,25 @@
+server:
+  port: 9096
+spring:
+  application:
+      name: kafka-app
+  kafka:
+    topic:
+     first: test.topic1
+     second: test.topic2
+    consumer:
+      bootstrap-servers: localhost:9093
+      group-id: kafka-app
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      ssl:
+         truststore-location: file:/C:/security/truststore.jks
+         truststore-password: fastdata
+         keystore-location: file:/C:/security/client.jks
+         keystore-password: fastdata
+         key-password: fastdata
+    properties:
+       security:
+          protocol: SSL
+      
