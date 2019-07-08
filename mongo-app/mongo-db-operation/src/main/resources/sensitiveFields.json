@@ -1,0 +1,7 @@
+{ "_id" : "dob", "className" : "com.fico.acm.model.SensitiveField", "maskPattern" : "******", "referencedName" : ["dateOfBirth", "dob", "birthDate", "salary", "Date of birth", "Salary"] }
+{ "_id" : "cardNumber", "className" : "com.fico.acm.model.SensitiveField", "maskPattern" : "\\w(?=\\w{4})", "referencedName" : ["accountNumber", "iban", "Debtor.AccountID"] }
+{ "_id" : "email", "className" : "com.fico.acm.model.SensitiveField", "maskPattern" : "(?<=.{3}).(?=.*@)", "referencedName" : ["email", "emailAddress", "emailId"] }
+{ "_id" : "commaseperated", "className" : "com.fico.acm.model.SensitiveField", "maskPattern" : "(?<=.{2}).(?=.*,)", "referencedName" : ["fullName"] }
+{ "_id" : "phone", "className" : "com.fico.acm.model.SensitiveField", "maskPattern" : "\\w(?=\\w{2})", "referencedName" : ["phone", "phoneNumber", "mobileNumber", "passportNumber"] }
+{ "_id" : "personaldata", "className" : "com.fico.acm.model.SensitiveField", "maskPattern" : "(?<=.{2}).", "referencedName" : ["firstName", "lastName", "name", "nationalities", "birthPlace", "birthCountry", "type", "street", "zip", "city", "country"] }
+{ "_id" : "maskall", "className" : "com.fico.acm.model.SensitiveField", "maskPattern" : "(?<=.{0}).", "referencedName" : ["businessNumber", "customerId", "externalId", "label", "isoCountryCode"] }

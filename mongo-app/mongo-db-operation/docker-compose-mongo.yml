@@ -1,0 +1,17 @@
+version: '2.1'
+services:
+  mongo:
+    image: mongo:3.4.7
+    ports:
+      - "27017:27017"
+  nosqlapp:
+    image: falcon007/mongodboperation:latest
+    links:
+      - mongo
+    environment:
+      spring.data.mongodb.uri: mongodb://mongo:27017/data
+    ports:
+      - "8083:8083"
+volumes:
+  installation:
+     external: false
