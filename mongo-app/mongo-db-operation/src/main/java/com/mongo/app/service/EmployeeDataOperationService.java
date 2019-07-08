@@ -6,7 +6,7 @@ import org.bson.types.ObjectId;
 
 import com.mongo.app.document.Employee;
 
-public interface DataOperationService {
+public interface EmployeeDataOperationService {
 	Employee createData(Employee employee);
 	List<Employee> readAllData();
 	Employee updateData(Employee employee);

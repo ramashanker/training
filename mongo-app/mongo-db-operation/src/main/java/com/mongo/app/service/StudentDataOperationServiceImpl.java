@@ -1,4 +1,4 @@
-package com.mongo.app.student.service;
+package com.mongo.app.service;
 
 import java.util.List;
 
@@ -9,14 +9,14 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mongo.app.student.document.Student;
+import com.mongo.app.document.Student;
 
 @Service
-public class DataOperationServiceImpl implements DataOperationService {
+public class StudentDataOperationServiceImpl implements StudentDataOperationService {
 
 	private MongoTemplate mongoTemplate;
 
-	public DataOperationServiceImpl(MongoTemplate mongoTemplate) {
+	public StudentDataOperationServiceImpl(MongoTemplate mongoTemplate) {
 		this.mongoTemplate = mongoTemplate;
 	}
 	@Transactional

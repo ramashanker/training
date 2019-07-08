@@ -1,4 +1,4 @@
-package com.mongo.app.student.document;
+package com.mongo.app.document;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;

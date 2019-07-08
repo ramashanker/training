@@ -18,40 +18,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mongo.app.document.Employee;
-import com.mongo.app.service.DataOperationService;
+import com.mongo.app.document.Student;
+import com.mongo.app.service.StudentDataOperationService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @Api(value = "Mongo DB operation controller api", description = "manage mongo crud operation")
 @RestController
-@RequestMapping("/mongo")
-public class OperationController {
-	private final DataOperationService dataUploadService;
+@RequestMapping("/mongo/student")
+public class StudentOperationController {
+	private final StudentDataOperationService dataUploadService;
 
-	public OperationController(final DataOperationService dataUploadService) {
+	public StudentOperationController(final StudentDataOperationService dataUploadService) {
 		this.dataUploadService = dataUploadService;
 	}
 
-	@ApiOperation(value = "insert document to mongodb", response = Employee.class)
+	@ApiOperation(value = "insert document to mongodb", response = Student.class)
 	@RequestMapping(value = "create", method = POST, produces =  APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
-	public Employee createData(@Valid @RequestBody Employee employee) {
-		return dataUploadService.createData(employee);	
+	public Student createData(@Valid @RequestBody Student student) {
+		return dataUploadService.createData(student);	
 	}
 	
-	@ApiOperation(value = "get All document to mongodb", response = Employee.class)
+	@ApiOperation(value = "get All document to mongodb", response = Student.class)
 	@RequestMapping(value = "read", method = GET, produces =  APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
-	public List<Employee> getAllData() {
+	public List<Student> getAllData() {
 		return dataUploadService.readAllData();	
 	}
 	
-	@ApiOperation(value = "update document to mongodb", response = Employee.class)
+	@ApiOperation(value = "update document to mongodb", response = Student.class)
 	@RequestMapping(value = "update/{id}", method = PUT, produces =  APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
-	public Employee updateData(@PathVariable("id")ObjectId  id,@Valid @RequestBody Employee employee) {
+	public Student updateData(@PathVariable("id")ObjectId  id,@Valid @RequestBody Student employee) {
 		employee.set_id(id);
 		return dataUploadService.updateData(employee);	
 	}

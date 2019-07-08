@@ -13,11 +13,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.mongo.app.document.Employee;
 
 @Service
-public class DataOperationServiceImpl implements DataOperationService {
+public class EmployeeDataOperationServiceImpl implements EmployeeDataOperationService {
 
 	private MongoTemplate mongoTemplate;
 
-	public DataOperationServiceImpl(MongoTemplate mongoTemplate) {
+	public EmployeeDataOperationServiceImpl(MongoTemplate mongoTemplate) {
 		this.mongoTemplate = mongoTemplate;
 	}
 	@Transactional

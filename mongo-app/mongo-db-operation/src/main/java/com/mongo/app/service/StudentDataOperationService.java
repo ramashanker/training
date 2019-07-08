@@ -1,12 +1,12 @@
-package com.mongo.app.student.service;
+package com.mongo.app.service;
 
 import java.util.List;
 
 import org.bson.types.ObjectId;
 
-import com.mongo.app.student.document.Student;
+import com.mongo.app.document.Student;
 
-public interface DataOperationService {
+public interface StudentDataOperationService {
 	Student createData(Student employee);
 	List<Student> readAllData();
 	Student updateData(Student employee);

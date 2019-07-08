@@ -1,4 +1,4 @@
-package com.mongo.app.student.controller;
+package com.mongo.app.controller;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
@@ -18,40 +18,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mongo.app.student.document.Student;
-import com.mongo.app.student.service.DataOperationService;
+import com.mongo.app.document.Employee;
+import com.mongo.app.service.EmployeeDataOperationService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @Api(value = "Mongo DB operation controller api", description = "manage mongo crud operation")
 @RestController
-@RequestMapping("/mongo/student")
-public class OperationController {
-	private final DataOperationService dataUploadService;
+@RequestMapping("/mongo")
+public class EmployeeOperationController {
+	private final EmployeeDataOperationService dataUploadService;
 
-	public OperationController(final DataOperationService dataUploadService) {
+	public EmployeeOperationController(final EmployeeDataOperationService dataUploadService) {
 		this.dataUploadService = dataUploadService;
 	}
 
-	@ApiOperation(value = "insert document to mongodb", response = Student.class)
+	@ApiOperation(value = "insert document to mongodb", response = Employee.class)
 	@RequestMapping(value = "create", method = POST, produces =  APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
-	public Student createData(@Valid @RequestBody Student student) {
-		return dataUploadService.createData(student);	
+	public Employee createData(@Valid @RequestBody Employee employee) {
+		return dataUploadService.createData(employee);	
 	}
 	
-	@ApiOperation(value = "get All document to mongodb", response = Student.class)
+	@ApiOperation(value = "get All document to mongodb", response = Employee.class)
 	@RequestMapping(value = "read", method = GET, produces =  APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
-	public List<Student> getAllData() {
+	public List<Employee> getAllData() {
 		return dataUploadService.readAllData();	
 	}
 	
-	@ApiOperation(value = "update document to mongodb", response = Student.class)
+	@ApiOperation(value = "update document to mongodb", response = Employee.class)
 	@RequestMapping(value = "update/{id}", method = PUT, produces =  APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
-	public Student updateData(@PathVariable("id")ObjectId  id,@Valid @RequestBody Student employee) {
+	public Employee updateData(@PathVariable("id")ObjectId  id,@Valid @RequestBody Employee employee) {
 		employee.set_id(id);
 		return dataUploadService.updateData(employee);	
 	}
