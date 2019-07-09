@@ -29,6 +29,7 @@
     <modules>
         <module>mongo-db-operation</module>
         <module>mongo-spring-data</module>
+         <module>mongo-json-import-export</module>
     </modules>
     <dependencies>
            
