@@ -23,16 +23,27 @@
         <swagger.version>2.9.2</swagger.version>
         <dockerfile-maven.version>1.4.10</dockerfile-maven.version>
         <docker.image.prefix>falcon007</docker.image.prefix>
-        <!-- /3rd party -->
     </properties>
     
     <modules>
         <module>mongo-db-operation</module>
         <module>mongo-spring-data</module>
-         <module>mongo-json-import-export</module>
+        <module>mongo-json-import-export</module>
+		<module>mong-file-upload</module>
     </modules>
     <dependencies>
-           
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+   
+        <!-- lombok -->
+        <dependency>
+		  <groupId>org.projectlombok</groupId>
+		   <artifactId>lombok</artifactId>
+		 </dependency> 
+		<!-- lombok -->
+		  
         <!-- swagger -->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -62,6 +73,18 @@
          <dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<!-- test -->
