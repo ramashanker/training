@@ -33,7 +33,7 @@
     </modules>
     <dependencies>
            
-           <!-- swagger -->
+        <!-- swagger -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
@@ -51,6 +51,20 @@
         </dependency>
         <!-- swagger -->
         
-
-        </dependencies>
+        <!-- mongodb -->
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+         <!-- mongodb -->
+         
+         <!-- test -->
+         <dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- test -->
+		
+     </dependencies>
 </project>
