@@ -14,6 +14,6 @@ public class RequestController {
     @RequestMapping("/message")
     public String index() {
     	LOGGER.info("Log sent to splunk!!");
-        return "Log sent to splunk!!";
+        return "Log sent to splunk forwarder!!";
     }
 }
