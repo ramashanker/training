@@ -1,0 +1,9 @@
+version: '2.1'
+services:
+  rama:
+    image: tanu319/datacache:latest
+    ports:
+      - "8085:8080"
+volumes:
+  installation:
+     external: false

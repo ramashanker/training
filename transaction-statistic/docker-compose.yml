@@ -1,0 +1,9 @@
+version: '2.1'
+services:
+  app:
+    image: rama/coding-challenge:latest
+    ports:
+      - "8083:8080"
+volumes:
+  installation:
+     external: false

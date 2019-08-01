@@ -1,0 +1,80 @@
+{
+	"id": "731253bd-195a-483b-8c91-823703d0d9ae",
+	"name": "N26-code-challange",
+	"description": null,
+	"auth": null,
+	"events": null,
+	"variables": null,
+	"order": [
+		"1b1be32e-4e7b-499d-804b-c71c5aa15ccd",
+		"21cf273a-f8f5-4b42-98a4-47a1cbb7448d",
+		"0daa00f4-a3c1-41d6-830e-0dfca7cfc7b2"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "0daa00f4-a3c1-41d6-830e-0dfca7cfc7b2",
+			"name": "http://localhost:8080/transactions",
+			"url": "http://localhost:8080/transactions",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "1b1be32e-4e7b-499d-804b-c71c5aa15ccd",
+			"name": "http://localhost:8080/transactions",
+			"url": "http://localhost:8080/transactions",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n  \"amount\": \"18.3343\",\n  \"timestamp\": \"2018-10-13T03:34:30.000Z\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "21cf273a-f8f5-4b42-98a4-47a1cbb7448d",
+			"name": "http://localhost:8080/statistics",
+			"url": "http://localhost:8080/statistics",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n  \"amount\": \"15.3343\",\n  \"timestamp\": \"2018-10-13T00:28:30.000Z\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		}
+	]
+}
