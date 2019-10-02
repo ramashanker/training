@@ -1,23 +1,22 @@
-package com.eureka.app.controller;
+package com.eureka.app.school.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.context.annotation.Bean;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
+@RequestMapping("/getSchoolDetails")
 public class SchoolServiceController {
 	@Autowired
 	RestTemplate restTemplate;
 
-	@RequestMapping(value = "/getSchoolDetails/{schoolname}", method = RequestMethod.GET)
-	public String getStudents(@PathVariable String schoolname) {
+	@GetMapping(value = "/{schoolname}")
+	public String getStudents(@PathVariable("schoolname") String schoolname) {
 		System.out.println("Getting School details for " + schoolname);
 		String response = restTemplate.exchange("http://student-service/getStudentDetailsForSchool/{schoolname}",
 				HttpMethod.GET, null, new ParameterizedTypeReference<String>() {
@@ -28,9 +27,4 @@ public class SchoolServiceController {
 		return "School Name -  " + schoolname + " \n Student Details " + response;
 	}
 
-	@Bean
-	@LoadBalanced
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
 }

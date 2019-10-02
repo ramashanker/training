@@ -1,0 +1,4 @@
+student:
+   url: /getSchoolDetails/{schoolname}
+school:
+   name: schooltest
