@@ -1,0 +1,11 @@
+create:
+   url: /mongo/create
+   
+read:
+   url: /mongo/read
+   
+update:
+   url: /mongo/update/{id}
+   
+delete:
+   url: /mongo/delete/{id}
