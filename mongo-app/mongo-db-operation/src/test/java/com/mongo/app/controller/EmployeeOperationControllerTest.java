@@ -77,7 +77,6 @@ public class EmployeeOperationControllerTest {
 
 	@Test
 	public void testReadData() throws Exception {
-
 		List<Employee> employees = new ArrayList<Employee>();
 		employees.add(createEmployee("58d1c36efb0cac4e15afd278"));
 		Mockito.when(dataUploadService.readAllData()).thenReturn(employees);
@@ -91,7 +90,6 @@ public class EmployeeOperationControllerTest {
 		assertEquals("123", employee.getEmpNo());
 		assertEquals("e1", employee.getFullName());
 		assertEquals("58d1c36efb0cac4e15afd278", result.get(0).get_id());
-
 	}
 
 	@Test
