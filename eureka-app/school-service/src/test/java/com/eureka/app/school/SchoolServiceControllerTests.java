@@ -1,67 +1,62 @@
 package com.eureka.app.school;
 
 import static org.junit.Assert.fail;
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
-import static org.springframework.test.web.client.response.MockRestResponseCreators.withStatus;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import java.net.URI;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Matchers;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.client.ExpectedCount;
-import org.springframework.test.web.client.MockRestServiceServer;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.web.client.RestTemplate;
 
 import com.eureka.app.school.controller.SchoolServiceController;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(SchoolServiceController.class)
 @ActiveProfiles("test")
-@SpringBootTest(classes = SpringTestConfig.class)
 public class SchoolServiceControllerTests {
 
-	@Autowired
+	@MockBean
 	private RestTemplate restTemplate;
 
 	@Autowired
 	private MockMvc mockMvc;
 
-	private MockRestServiceServer mockServer;
-
-	private ObjectMapper mapper = new ObjectMapper();
-
 	@Value("${student.url}")
 	String url;
 	@Value("${school.name}")
 	String schoolname;
+	
 
 	@Before
 	public void init() {
-		mockServer = MockRestServiceServer.createServer(restTemplate);
+	//	ReflectionTestUtils.setField(schoolServiceController, "envelopeFactory", restTemplate);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testGetStudents() throws Exception {
-		mockServer.expect(ExpectedCount.once(), requestTo(new URI("http://student-service/getStudentDetailsForSchool/")))
-				.andExpect(method(HttpMethod.GET)).andRespond(withStatus(HttpStatus.OK)
-						.contentType(MediaType.APPLICATION_JSON).body(mapper.writeValueAsString(String.class)));
+		ResponseEntity<String> myEntity = new ResponseEntity<String>(HttpStatus.OK);
+		String requestUrl="http://student-service/getStudentDetailsForSchool/"+schoolname;
+		Mockito.when(restTemplate.exchange(Matchers.eq(requestUrl), Matchers.eq(HttpMethod.GET),
+				Matchers.<HttpEntity<String>>any(), Matchers.<ParameterizedTypeReference<String>>any()))
+				.thenReturn(myEntity);
 		ResultActions responseEntity = processApiRequest(url, HttpMethod.GET, schoolname);
 		responseEntity.andExpect(status().isOk());
 	}
