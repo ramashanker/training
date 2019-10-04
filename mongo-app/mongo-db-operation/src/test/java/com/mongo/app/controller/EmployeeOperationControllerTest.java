@@ -27,6 +27,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongo.app.document.Employee;
 import com.mongo.app.service.EmployeeDataOperationService;
@@ -43,34 +44,34 @@ public class EmployeeOperationControllerTest {
 	private MockMvc mockMvc;
 
 	@MockBean
-	EmployeeDataOperationService dataUploadService;
+	EmployeeDataOperationService employeeDataOperationService;
 
-	@Value("${create.url}")
+	@Value("${employee.create.url}")
 	String createurl;
 
-	@Value("${read.url}")
+	@Value("${employee.read.url}")
 	String readurl;
 
-	@Value("${update.url}")
+	@Value("${employee.update.url}")
 	String updateurl;
 
-	@Value("${delete.url}")
+	@Value("${employee.delete.url}")
 	String deleteurl;
 
 	@Test
 	public void testCreateData() throws Exception {
 
-		Mockito.when(dataUploadService.createData(Mockito.any(Employee.class)))
-				.thenReturn(createEmployee("58d1c36efb0cac4e15afd278"));
-		ResultActions responseEntity = processApiRequest(createurl, HttpMethod.POST,null,
-				createEmployee("58d1c36efb0cac4e15afd278"));
+		Mockito.when(employeeDataOperationService.createData(Mockito.any(Employee.class)))
+				.thenReturn(createEmployee("58d1c36efb0cac4e15afd278", 20, "123", "test"));
+		ResultActions responseEntity = processApiRequest(createurl, HttpMethod.POST, null,
+				createEmployee("58d1c36efb0cac4e15afd278", 20, "123", "test"));
 		responseEntity.andExpect(status().isOk());
 		ObjectMapper mapper = new ObjectMapper();
 		Employee result = mapper.readValue(responseEntity.andReturn().getResponse().getContentAsString(),
 				Employee.class);
 		assertEquals(20, result.getAge());
 		assertEquals("123", result.getEmpNo());
-		assertEquals("e1", result.getFullName());
+		assertEquals("test", result.getFullName());
 		assertEquals("58d1c36efb0cac4e15afd278", result.get_id());
 
 	}
@@ -78,48 +79,45 @@ public class EmployeeOperationControllerTest {
 	@Test
 	public void testReadData() throws Exception {
 		List<Employee> employees = new ArrayList<Employee>();
-		employees.add(createEmployee("58d1c36efb0cac4e15afd278"));
-		Mockito.when(dataUploadService.readAllData()).thenReturn(employees);
+		employees.add(createEmployee("58d1c36efb0cac4e15afd278", 20, "123", "test"));
+		Mockito.when(employeeDataOperationService.readAllData()).thenReturn(employees);
 		ResultActions responseEntity = processApiRequest(readurl, HttpMethod.GET, null, null);
 		responseEntity.andExpect(status().isOk());
 		ObjectMapper mapper = new ObjectMapper();
 		List<Employee> result = mapper.readValue(responseEntity.andReturn().getResponse().getContentAsString(),
-				List.class);
-		Employee employee=result.get(0);
+				new TypeReference<List<Employee>>(){});
+		Employee employee = result.get(0);
 		assertEquals(20, employee.getAge());
 		assertEquals("123", employee.getEmpNo());
-		assertEquals("e1", employee.getFullName());
+		assertEquals("test", employee.getFullName());
 		assertEquals("58d1c36efb0cac4e15afd278", result.get(0).get_id());
 	}
 
 	@Test
 	public void testUpdateData() throws Exception {
 
-		Mockito.when(dataUploadService.createData(Mockito.any(Employee.class)))
-				.thenReturn(createEmployee("58d1c36efb0cac4e15afd278"));
+		Mockito.when(employeeDataOperationService.updateData(Mockito.any(Employee.class)))
+				.thenReturn(createEmployee("58d1c36efb0cac4e15afd123", 20, "123", "test"));
 		ResultActions responseEntity = processApiRequest(updateurl, HttpMethod.PUT,
-				new ObjectId("58d1c36efb0cac4e15afd278"), null);
+				new ObjectId("58d1c36efb0cac4e15afd123"), createEmployee("58d1c36efb0cac4e15afd278", 20, "123", "test"));
 		responseEntity.andExpect(status().isOk());
 		ObjectMapper mapper = new ObjectMapper();
 		Employee result = mapper.readValue(responseEntity.andReturn().getResponse().getContentAsString(),
 				Employee.class);
 		assertEquals(20, result.getAge());
 		assertEquals("123", result.getEmpNo());
-		assertEquals("e1", result.getFullName());
-		assertEquals("58d1c36efb0cac4e15afd278", result.get_id());
+		assertEquals("test", result.getFullName());
+		assertEquals("58d1c36efb0cac4e15afd123", result.get_id());
 
 	}
 
 	@Test
 	public void testDeleteData() throws Exception {
-
+		
 		ResultActions responseEntity = processApiRequest(deleteurl, HttpMethod.DELETE,
 				new ObjectId("58d1c36efb0cac4e15afd278"), null);
 		responseEntity.andExpect(status().isOk());
-		ObjectMapper mapper = new ObjectMapper();
-		Employee result = mapper.readValue(responseEntity.andReturn().getResponse().getContentAsString(),
-				Employee.class);
-		Mockito.verify(dataUploadService, times(1)).deleteData(any(ObjectId.class));
+		Mockito.verify(employeeDataOperationService, times(1)).deleteData(any(ObjectId.class));
 
 	}
 
@@ -135,7 +133,8 @@ public class EmployeeOperationControllerTest {
 						.content(asJsonString(employee)).accept(MediaType.APPLICATION_JSON));
 				break;
 			case PUT:
-				response = mockMvc.perform(put(api, id));
+				response = mockMvc.perform(put(api, id).contentType(MediaType.APPLICATION_JSON)
+						.content(asJsonString(employee)).accept(MediaType.APPLICATION_JSON));
 				break;
 			case DELETE:
 				response = mockMvc.perform(delete(api, id));
@@ -161,12 +160,12 @@ public class EmployeeOperationControllerTest {
 		}
 	}
 
-	private static Employee createEmployee(String id) {
+	private static Employee createEmployee(String id, int age, String empNo, String name) {
 		Employee empEmployee = new Employee();
-		empEmployee.set_id(new ObjectId("58d1c36efb0cac4e15afd278"));
-		empEmployee.setAge(20);
-		empEmployee.setEmpNo("123");
-		empEmployee.setFullName("e1");
+		empEmployee.set_id(new ObjectId(id));
+		empEmployee.setAge(age);
+		empEmployee.setEmpNo(empNo);
+		empEmployee.setFullName(name);
 		empEmployee.setJoiningDate(new Date());
 		return empEmployee;
 	}

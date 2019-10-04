@@ -28,24 +28,24 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/mongo/student")
 public class StudentOperationController {
-	private final StudentDataOperationService dataUploadService;
+	private final StudentDataOperationService studentDataOperationService;
 
 	public StudentOperationController(final StudentDataOperationService dataUploadService) {
-		this.dataUploadService = dataUploadService;
+		this.studentDataOperationService = dataUploadService;
 	}
 
 	@ApiOperation(value = "insert document to mongodb", response = Student.class)
 	@RequestMapping(value = "create", method = POST, produces =  APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public Student createData(@Valid @RequestBody Student student) {
-		return dataUploadService.createData(student);	
+		return studentDataOperationService.createData(student);	
 	}
 	
 	@ApiOperation(value = "get All document to mongodb", response = Student.class)
 	@RequestMapping(value = "read", method = GET, produces =  APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public List<Student> getAllData() {
-		return dataUploadService.readAllData();	
+		return studentDataOperationService.readAllData();	
 	}
 	
 	@ApiOperation(value = "update document to mongodb", response = Student.class)
@@ -53,13 +53,13 @@ public class StudentOperationController {
 	@ResponseStatus(HttpStatus.OK)
 	public Student updateData(@PathVariable("id")ObjectId  id,@Valid @RequestBody Student employee) {
 		employee.set_id(id);
-		return dataUploadService.updateData(employee);	
+		return studentDataOperationService.updateData(employee);	
 	}
 	
 	@ApiOperation(value = "delete document to mongodb")
 	@RequestMapping(value = "delete/{id}", method = DELETE, produces =  APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public void updateData(@PathVariable("id")ObjectId  id) {
-		 dataUploadService.deleteData(id);	
+		 studentDataOperationService.deleteData(id);	
 	}
 }

@@ -26,26 +26,26 @@ import io.swagger.annotations.ApiOperation;
 
 @Api(value = "Mongo DB operation controller api", description = "manage mongo crud operation")
 @RestController
-@RequestMapping("/mongo")
+@RequestMapping("/mongo/employee")
 public class EmployeeOperationController {
-	private final EmployeeDataOperationService dataUploadService;
+	private final EmployeeDataOperationService employeeDataOperationService;
 
 	public EmployeeOperationController(final EmployeeDataOperationService dataUploadService) {
-		this.dataUploadService = dataUploadService;
+		this.employeeDataOperationService = dataUploadService;
 	}
 
 	@ApiOperation(value = "insert document to mongodb", response = Employee.class)
 	@RequestMapping(value = "create", method = POST, produces =  APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public Employee createData(@Valid @RequestBody Employee employee) {
-		return dataUploadService.createData(employee);	
+		return employeeDataOperationService.createData(employee);	
 	}
 	
 	@ApiOperation(value = "get All document to mongodb", response = Employee.class)
 	@RequestMapping(value = "read", method = GET, produces =  APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public List<Employee> getAllData() {
-		return dataUploadService.readAllData();	
+		return employeeDataOperationService.readAllData();	
 	}
 	
 	@ApiOperation(value = "update document to mongodb", response = Employee.class)
@@ -53,13 +53,13 @@ public class EmployeeOperationController {
 	@ResponseStatus(HttpStatus.OK)
 	public Employee updateData(@PathVariable("id")ObjectId  id,@Valid @RequestBody Employee employee) {
 		employee.set_id(id);
-		return dataUploadService.updateData(employee);	
+		return employeeDataOperationService.updateData(employee);	
 	}
 	
 	@ApiOperation(value = "delete document to mongodb")
 	@RequestMapping(value = "delete/{id}", method = DELETE, produces =  APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public void updateData(@PathVariable("id")ObjectId  id) {
-		 dataUploadService.deleteData(id);	
+		 employeeDataOperationService.deleteData(id);	
 	}
 }

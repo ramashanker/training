@@ -1,11 +1,25 @@
-create:
-   url: /mongo/create
+employee:
+   create:
+      url: /mongo/employee/create
    
-read:
-   url: /mongo/read
+   read:
+      url: /mongo/employee/read
    
-update:
-   url: /mongo/update/{id}
+   update:
+      url: /mongo/employee/update/{id}
    
-delete:
-   url: /mongo/delete/{id}
+   delete:
+      url: /mongo/employee/delete/{id}
+     
+student:
+   create:
+      url: /mongo/student/create
+   
+   read:
+      url: /mongo/student/read
+   
+   update:
+      url: /mongo/student/update/{id}
+   
+   delete:
+      url: /mongo/student/delete/{id}
