@@ -1,0 +1,8 @@
+version: '3'
+services:
+  smppserver:
+    image: falcon007/server-app:1.0.0
+  client:
+    image: falcon007/client-app:1.0.0
+    links:
+      - smppserver
