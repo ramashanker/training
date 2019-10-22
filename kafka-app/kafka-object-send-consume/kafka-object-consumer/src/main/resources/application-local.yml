@@ -1,0 +1,12 @@
+server:
+  port: 9096
+spring:
+  application:
+      name: kafka-app
+  kafka:
+    topic:
+      first: object.topic1
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: kafka-app
+      auto-offset-reset: earliest

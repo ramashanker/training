@@ -1,0 +1,10 @@
+server:
+  port: 9095
+spring:
+  application:
+      name: kafka-app
+  kafka:
+    topic:
+       first: object.topic1
+    producer:
+      bootstrap-servers: localhost:9092
