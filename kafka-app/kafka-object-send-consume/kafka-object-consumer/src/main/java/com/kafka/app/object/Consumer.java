@@ -20,11 +20,8 @@ public class Consumer {
 
     private final Logger logger = LoggerFactory.getLogger(Consumer.class);
 
-    @KafkaListener(topics ="${spring.kafka.topic.first}",containerFactory = "kafkaListenerManualAckContainerFactory")
-    public void consumeFromFirst(ConsumerRecord<?, ?> consumerRecord, Acknowledgment acknowledgment, @Header(
-            KafkaHeaders.RECEIVED_MESSAGE_KEY) Integer key) throws InterruptedException, ExecutionException {
-
-        PayloadData data= (PayloadData)consumerRecord.value();
+    @KafkaListener(topics ="${spring.kafka.topic.first}",containerFactory = "kafkaListenerContainerFactory")
+    public void consumeFromFirst(/*ConsumerRecord<?, ?> consumerRecord*/PayloadData data, Acknowledgment acknowledgment, @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) Integer key) throws InterruptedException, ExecutionException {
         logger.info("Receiver on topic: "+ data.toString());
         logger.info("Receiver on partition key: "+ key);
         ExecutorService executorService = Executors.newFixedThreadPool(1);

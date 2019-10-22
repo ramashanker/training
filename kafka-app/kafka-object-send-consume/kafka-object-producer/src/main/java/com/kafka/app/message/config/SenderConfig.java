@@ -22,7 +22,7 @@ public class SenderConfig {
     private String bootstrapServers;
 
     @Bean
-    public Map<String, Object> internalProducerConfigs() {
+    public Map<String, Object> producerConfigs() {
         Map<String, Object> props = new HashMap<>();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
@@ -30,12 +30,12 @@ public class SenderConfig {
         return props;
     }
     @Bean
-    public ProducerFactory<String, PayloadData> internalProducerFactory() {
-        return new DefaultKafkaProducerFactory<>(internalProducerConfigs());
+    public ProducerFactory<String, PayloadData> producerFactory() {
+        return new DefaultKafkaProducerFactory<>(producerConfigs());
     }
 
     @Bean(name="internalKafkaTemplate")
     public KafkaTemplate<String, PayloadData> kafkaTemplate() {
-        return new KafkaTemplate<>(internalProducerFactory());
+        return new KafkaTemplate<>(producerFactory());
     }
 }
