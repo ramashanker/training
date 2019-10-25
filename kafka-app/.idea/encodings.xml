@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-log-stream" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-object-send-comsume" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-object-send-comsume/kafka-object-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-object-send-comsume/kafka-object-producer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-stream" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/log-producer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/message-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/message-producer" charset="UTF-8" />
+  </component>
+</project>

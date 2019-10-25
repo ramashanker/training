@@ -1,5 +1,6 @@
 package com.kafka.app.message.consume;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -17,17 +18,18 @@ public class Consumer {
 
     @KafkaListener(topics ="${spring.kafka.topic.first}")
     public void consumeFromFirst(ConsumerRecord<?, ?> consumerRecord) {
-    	Date date = new Date();
-        long timeMilli = date.getTime();
-        System.out.println("Time in milliseconds using Date class: " + timeMilli);
+        LocalDate localDate = LocalDate.now();
+
+        System.out.println("Time in milliseconds using Date class: " + localDate);
+        PayloadData data= (PayloadData)consumerRecord.value();
         logger.info("Receiver on topic: "+ consumerRecord.value().toString());
     }
     
     @KafkaListener(topics ="${spring.kafka.topic.second}")
     public void consumeFromSecond(ConsumerRecord<?, ?> consumerRecord) {
-    	Date date = new Date();
-        long timeMilli = date.getTime();
-        System.out.println("Time in milliseconds using Date class: " + timeMilli);
+    	LocalDate localDate = LocalDate.now();
+        System.out.println("Time in milliseconds using Date class: " + localDate);
+
         logger.info("Receiver on topic: "+ consumerRecord.value().toString());
     }
 }

@@ -1,6 +1,6 @@
-package com.kafka.app.message.produce;
+package com.kafka.app.message;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,14 +20,14 @@ public class Producer {
     protected String destinationTopic;
 
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaTemplate kafkaTemplate;
 
-    public void send(String payload){
-        logger.info("Message: "+payload+" sent to topic: "+destinationTopic);
-        Date date = new Date();
-        long timeMilli = date.getTime();
-        System.out.println("Time in milliseconds using Date class: " + timeMilli);
-        kafkaTemplate.send(destinationTopic, payload);
+    public void send(String key){
+        logger.info("Message: "+key+" sent to topic: "+destinationTopic);
+        LocalDate localDate=LocalDate.now();
+        System.out.println("Time in milliseconds using Date class: " + localDate);
+        PayloadData payload= new PayloadData(key,localDate);
+        kafkaTemplate.send(destinationTopic,key, payload);
     }
 
 }
