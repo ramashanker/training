@@ -1,0 +1,13 @@
+spring:
+   application:
+      name: cassandra-crud
+   data:
+      cassandra:
+         keyspace: test_local_eu
+         contact-points: localhost
+         port: 9042
+         username: admin
+         password: admin
+
+server:
+   port: 8078
