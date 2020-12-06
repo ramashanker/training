@@ -2,6 +2,7 @@ package com.mongo.app.controller;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -12,17 +13,36 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.mongo.app.config.SpringSecurityBasicConfig;
+import com.mongo.app.document.Student;
 import org.bson.types.ObjectId;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.context.event.EventListener;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
@@ -32,14 +52,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongo.app.document.Employee;
 import com.mongo.app.service.EmployeeDataOperationService;
 
+import javax.annotation.PostConstruct;
+
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.times;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(EmployeeOperationController.class)
-@ActiveProfiles("test")
+@WebMvcTest({EmployeeOperationController.class})
+@ActiveProfiles(value = "test")
 public class EmployeeOperationControllerTest {
-
 	@Autowired
 	private MockMvc mockMvc;
 
@@ -58,9 +78,25 @@ public class EmployeeOperationControllerTest {
 	@Value("${employee.delete.url}")
 	String deleteurl;
 
+	@TestConfiguration
+	public static class TestConfig {
+		@Bean
+		@Primary
+		public StudentOperationController mockStudentOperationController() {
+			StudentOperationController studentOperationController = mock(StudentOperationController.class);
+			Student student=mock(Student.class);
+			List students= new ArrayList();
+			students.add(student);
+			Mockito.when(studentOperationController.getAllData()).thenReturn(students);
+			return studentOperationController;
+		}
+
+	}
+
+
+
 	@Test
 	public void testCreateData() throws Exception {
-
 		Mockito.when(employeeDataOperationService.createData(Mockito.any(Employee.class)))
 				.thenReturn(createEmployee("58d1c36efb0cac4e15afd278", 20, "123", "test"));
 		ResultActions responseEntity = processApiRequest(createurl, HttpMethod.POST, null,

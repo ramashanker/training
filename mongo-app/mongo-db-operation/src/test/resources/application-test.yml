@@ -1,3 +1,11 @@
+security:
+   basic:
+      enabled: false
+   ignored: /**
+management:
+   security:
+      enabled: false
+
 employee:
    create:
       url: /mongo/employee/create

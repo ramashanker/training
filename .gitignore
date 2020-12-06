@@ -10,3 +10,4 @@ build/
 .SpringBeans
 .DS_Store
 .gitattributes
+.idea/

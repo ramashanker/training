@@ -2,10 +2,7 @@ package com.kafka.app.message.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.kafka.app.message.Producer;
 
@@ -21,7 +18,7 @@ public class DataController {
     }
 
     @PostMapping(value = "/data")
-    public void sendMessage(@RequestParam("message") String message) {
+    public void sendMessage(@RequestBody String message) {
         logger.info("send message to kafka topic");
         this.producer.send( message);
     }

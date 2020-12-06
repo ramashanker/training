@@ -10,6 +10,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import com.mongo.app.document.Student;
 import org.bson.types.ObjectId;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,16 +30,20 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("/mongo/employee")
 public class EmployeeOperationController {
 	private final EmployeeDataOperationService employeeDataOperationService;
+	private StudentOperationController studentOperationController;
 
-	public EmployeeOperationController(final EmployeeDataOperationService dataUploadService) {
+	public EmployeeOperationController(final EmployeeDataOperationService dataUploadService,StudentOperationController studentOperationController) {
 		this.employeeDataOperationService = dataUploadService;
+		this.studentOperationController =studentOperationController;
 	}
 
 	@ApiOperation(value = "insert document to mongodb", response = Employee.class)
 	@RequestMapping(value = "create", method = POST, produces =  APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public Employee createData(@Valid @RequestBody Employee employee) {
-		return employeeDataOperationService.createData(employee);	
+		List<Student> students= studentOperationController.getAllData();
+		System.out.println(students.size());
+		return employeeDataOperationService.createData(employee);
 	}
 	
 	@ApiOperation(value = "get All document to mongodb", response = Employee.class)
