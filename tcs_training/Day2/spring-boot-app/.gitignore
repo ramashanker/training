@@ -1,0 +1,12 @@
+.gradle/
+.metadata/
+.recommenders/
+.git/
+target/
+build/
+.classpath
+.settings/
+.project
+.SpringBeans
+.DS_Store
+.gitattributes

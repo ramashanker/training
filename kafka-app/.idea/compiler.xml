@@ -6,9 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="kafka-message-producer" />
-        <module name="kafka-object-consumer" />
         <module name="kafka-object-producer" />
+        <module name="kafka-object-consumer" />
+        <module name="kafka-message-producer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,11 +17,11 @@
       <module name="kafka-log-producer" target="1.8" />
       <module name="kafka-log-stream" target="1.5" />
       <module name="kafka-message-consumer" target="1.8" />
-      <module name="kafka-object-send-consume" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="kafka-data-lib" options="-parameters" />
       <module name="kafka-data-stream" options="-parameters" />
       <module name="kafka-log-producer" options="-parameters" />
       <module name="kafka-message-consumer" options="-parameters" />

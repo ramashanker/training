@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: sprigapp
+  name: sprigapp
+spec:
+  ports:
+  - name: "8082"
+    port: 8082
+    targetPort: 8080
+  selector:
+    app: sprigapp
+status:
+  loadBalancer: {}

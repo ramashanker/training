@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sprigapp
+  name: sprigapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+     app: sprigapp
+  template:
+    metadata:
+      labels:
+        app: sprigapp
+    spec:
+      containers:
+      - image: falcon007/spring-boot-app:0.0.1
+        name: sprigapp
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 1
+            memory: 1024Mi
+          requests:
+            cpu: 500m
+            memory: 1024Mi
+      restartPolicy: Always
+status: {}
+

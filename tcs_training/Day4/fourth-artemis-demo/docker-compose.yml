@@ -1,0 +1,11 @@
+version: '3.2'
+services:
+  artemis:
+    image: vromero/activemq-artemis:latest
+    ports:
+      - "61618:61616"
+    environment:
+      ARTEMIS_USERNAME: admin
+      ARTEMIS_PASSWORD: admin
+      ARTEMIS_MIN_MEMORY: 512M
+      ARTEMIS_MAX_MEMORY: 2048M

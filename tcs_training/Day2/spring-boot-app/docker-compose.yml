@@ -1,0 +1,6 @@
+version: '3.2'
+services:
+  sprigapp:
+    image: falcon007/spring-boot-app:0.0.1
+    ports:
+      - "8082:8080"
