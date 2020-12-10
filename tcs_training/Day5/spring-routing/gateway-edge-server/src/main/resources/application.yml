@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      default-filters:
+      - name: RequestSize
+        args:
+          maxSize: 50000000
+
+server:
+  port: 8060
