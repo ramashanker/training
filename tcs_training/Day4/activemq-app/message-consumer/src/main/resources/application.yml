@@ -1,0 +1,2 @@
+active-mq:
+  broker-url: tcp://int-amq.service.dev.local:61616?jms.rmIdFromConnectionId=true

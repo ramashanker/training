@@ -1,103 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="43cbfaf6-3303-4a01-bc10-3f962d0669bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/kafka-app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mongo-app/mongo-db-operation/mongo-db-operation.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__com_fasterxml_classmate_1_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__com_google_code_gson_gson_2_8_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__com_google_guava_guava_20_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_lettuce_lettuce_core_5_1_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_netty_netty_buffer_4_1_36_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_netty_netty_codec_4_1_36_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_netty_netty_common_4_1_36_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_netty_netty_handler_4_1_36_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_netty_netty_resolver_4_1_36_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_netty_netty_transport_4_1_36_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_projectreactor_reactor_core_3_2_10_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_springfox_springfox_core_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_springfox_springfox_schema_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_springfox_springfox_spi_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__io_swagger_swagger_models_1_5_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_11_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_21.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_21.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_21.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_17_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_mapstruct_mapstruct_1_2_0_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_spring_aop_5_1_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_spring_beans_5_1_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_spring_context_5_1_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_spring_context_support_5_1_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_spring_core_5_1_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_spring_expression_5_1_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_spring_oxm_5_1_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_spring_tx_5_1_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_spring_web_5_1_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_springframework_spring_webmvc_5_1_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/libraries/Maven__redis_clients_jedis_2_9_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/spring-boot-redis.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/src/main/java/com/rama/spring/app/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/src/main/java/com/rama/spring/app/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/src/main/java/com/rama/spring/app/controller/MessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/src/main/java/com/rama/spring/app/dto/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/src/main/java/com/rama/spring/app/model/CacheMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/src/main/java/com/rama/spring/app/repository/RedisMessageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/src/main/java/com/rama/spring/app/util/XmlGregorianUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring-boot-redis/src/test/java/com/rama/data/security/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongo-app/mongo-db-operation/docker/docker-compose-mongo.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongo-app/mongo-db-operation/src/main/java/com/mongo/app/config/SpringSecurityBasicConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/docker/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tcs_training/Day2/DockerDay1.pptx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/message-producer/src/main/java/com/kafka/app/message/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/message-producer/src/main/java/com/kafka/app/message/controller/DataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/.springBeans" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/.springBeans" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-db-operation/docker/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/docker/docker-compose-mongo.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/docker/docker-compose-mongo.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/src/main/java/com/mongo/app/file/MongoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/src/main/java/com/mongo/app/file/MongoApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/src/main/java/com/mongo/app/file/controller/OperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/src/main/java/com/mongo/app/file/controller/OperationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/src/main/java/com/mongo/app/file/exception/ProcessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/src/main/java/com/mongo/app/file/exception/ProcessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/src/main/java/com/mongo/app/file/response/FileUploadResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/src/main/java/com/mongo/app/file/response/FileUploadResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/src/main/java/com/mongo/app/file/service/FileUploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/src/main/java/com/mongo/app/file/service/FileUploadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/src/main/java/com/mongo/app/file/service/FileUploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/src/main/java/com/mongo/app/file/service/FileUploadServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/src/main/resources/sensitiveFields.json" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/src/main/resources/sensitiveFields.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/src/test/java/com/mongo/app/file/controller/OperationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/src/test/java/com/mongo/app/file/controller/OperationControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/src/test/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/src/test/resources/application-test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mong-file-upload/src/test/resources/employee.json" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/mongo-file-upload/src/test/resources/employee.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/mongo-db-operation/mongo-db-operation.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mongo-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mongo-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-redis/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-redis/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-boot-redis/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-boot-redis/spring-boot-redis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-boot-redis/spring-boot-redis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tcs_training/Day4/topics" beforeDir="false" afterPath="$PROJECT_DIR$/../tcs_training/Day4/topics" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,14 +54,14 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571661474713" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/kafka-object-send-comsume" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -164,53 +100,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="kafka-app" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="kafka-app" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.ConsumerApp" />
       <item itemvalue="Application.ProducerApplication" />
@@ -222,6 +111,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -234,56 +124,6 @@
       <updated>1571656903129</updated>
     </task>
     <servers />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="2539" y="256" width="671" height="685" key="#ConsumerApp" timestamp="1585841138990">
-      <screen x="1920" y="0" width="1920" height="1200" />
-    </state>
-    <state x="2539" y="256" width="671" height="685" key="#ConsumerApp/67.27.1853.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1585841138990" />
-    <state x="2338" y="257" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585841165656">
-      <screen x="1920" y="0" width="1920" height="1200" />
-    </state>
-    <state x="2338" y="257" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1585841165656" />
-    <state x="2612" y="385" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585841121134">
-      <screen x="1920" y="0" width="1920" height="1200" />
-    </state>
-    <state x="2612" y="385" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog/67.27.1853.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1585841121134" />
-    <state x="2721" y="491" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585840836512">
-      <screen x="1920" y="0" width="1920" height="1200" />
-    </state>
-    <state x="2721" y="491" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/67.27.1853.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1585840836512" />
-    <state x="2663" y="315" width="424" height="567" key="FileChooserDialogImpl" timestamp="1585842200580">
-      <screen x="1920" y="0" width="1920" height="1200" />
-    </state>
-    <state x="2663" y="315" width="424" height="567" key="FileChooserDialogImpl/67.27.1853.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1585842200580" />
-    <state width="1874" height="245" key="GridCell.Tab.0.bottom" timestamp="1585841816552">
-      <screen x="1920" y="0" width="1920" height="1200" />
-    </state>
-    <state width="1874" height="245" key="GridCell.Tab.0.bottom/67.27.1853.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1585841816552" />
-    <state width="1874" height="245" key="GridCell.Tab.0.center" timestamp="1585841816552">
-      <screen x="1920" y="0" width="1920" height="1200" />
-    </state>
-    <state width="1874" height="245" key="GridCell.Tab.0.center/67.27.1853.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1585841816552" />
-    <state width="1874" height="245" key="GridCell.Tab.0.left" timestamp="1585841816552">
-      <screen x="1920" y="0" width="1920" height="1200" />
-    </state>
-    <state width="1874" height="245" key="GridCell.Tab.0.left/67.27.1853.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1585841816552" />
-    <state width="1874" height="245" key="GridCell.Tab.0.right" timestamp="1585841816552">
-      <screen x="1920" y="0" width="1920" height="1200" />
-    </state>
-    <state width="1874" height="245" key="GridCell.Tab.0.right/67.27.1853.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1585841816552" />
-    <state x="2465" y="298" width="819" height="602" key="NewModule_or_Project.wizard" timestamp="1585842202611">
-      <screen x="1920" y="0" width="1920" height="1200" />
-    </state>
-    <state x="2465" y="298" width="819" height="602" key="NewModule_or_Project.wizard/67.27.1853.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1585842202611" />
-    <state x="2363" y="176" width="1024" height="845" key="SettingsEditor" timestamp="1585840974283">
-      <screen x="1920" y="0" width="1920" height="1200" />
-    </state>
-    <state x="2363" y="176" width="1024" height="845" key="SettingsEditor/67.27.1853.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1585840974283" />
-    <state x="2536" y="426" key="com.intellij.ide.util.TipDialog" timestamp="1585842180127">
-      <screen x="1920" y="0" width="1920" height="1200" />
-    </state>
-    <state x="2536" y="426" key="com.intellij.ide.util.TipDialog/67.27.1853.1053/1920.0.1920.1200@1920.0.1920.1200" timestamp="1585842180127" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

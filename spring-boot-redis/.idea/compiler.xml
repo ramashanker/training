@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="spring-boot-redis" target="1.8" />
+      <module name="spring-boot-redis" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
